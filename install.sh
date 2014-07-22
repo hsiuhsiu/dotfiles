@@ -9,9 +9,9 @@ rm -f ~/.bash_profile
 echo -e "source ~/.bashrc" > ~/.bash_profile
 
 echo "link .gitconfig"
-ln -s ~/.gitconfig ${DIR}/git/gitconfig
+ln -s  ${DIR}/git/gitconfig~/.gitconfig
 echo "link .gitignore_global"
-ln -s ~/.gitignore_global ${DIR}/git/gitignore_global
+ln -s ${DIR}/git/gitignore_global ~/.gitignore_global
 
 echo "link .vim/"
 ln -s ${DIR}/vim ~/.vim

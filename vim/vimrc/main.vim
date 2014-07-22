@@ -2,7 +2,7 @@
 syntax on
 set background=dark
 "set background=light
-"colorscheme solarized
+colorscheme kolor
 
 set ai
 set tabstop=4
