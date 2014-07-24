@@ -1,0 +1,11 @@
+Host cunix
+    Hostname cunix.cc.columbia.edu
+    User yc2796
+
+Host csie
+    Hostname linux15.csie.ntu.edu.tw
+    User b96202041
+
+Host phys
+    Hostname phys.tw
+    User b96202041

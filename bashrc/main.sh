@@ -11,6 +11,7 @@ source ${DIR}/prompt.sh
 source ${DIR}/basic_alias.sh
 
 alias server='python -m SimpleHTTPServer'
+alias ptt='ssh bbsu@ptt.cc'
 
 # Rocket Fuel
 export PATH=$PATH:/Users/yhchen/git/repo/rrepo
