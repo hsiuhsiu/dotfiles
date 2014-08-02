@@ -1,36 +1,55 @@
+" -----------------------------------------------------------------------------
 " Coloring
+" -----------------------------------------------------------------------------
 syntax on
-set background=dark
-"set background=light
-colorscheme kolor
+" color scheme may overwrite the highlights
+"colorscheme kolor
 
+
+" -----------------------------------------------------------------------------
+" Common Basic Settings
+" -----------------------------------------------------------------------------
+filetype indent plugin on
+set nocompatible
 set ai
+set nu
+set hlsearch
+set mouse=a
+set tenc=utf-8
+
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set nu
-set hlsearch
-set mouse=a
+
 "set scrolloff=999 "always make cursor in the middle of the screen
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" -----------------------------------------------------------------------------
+" Highlights
+" -----------------------------------------------------------------------------
+highlight Tab guifg=red ctermbg=red
+call matchadd('Tab', '\t')
 
+highlight ExtraWhitespace ctermbg=grey guibg=grey
+call matchadd('ExtraWhitespace', '\s\+$')
 
+" -----------------------------------------------------------------------------
+" Abbreviation
+" -----------------------------------------------------------------------------
 "abbreviations"
-func Eatchar(pat)
-    let c = nr2char(getchar(0))
-    return (c =~ a:pat) ? '' : c
-endfunc
+"func Eatchar(pat)
+"    let c = nr2char(getchar(0))
+"    return (c =~ a:pat) ? '' : c
+"endfunc
 
+" -----------------------------------------------------------------------------
+" Belows should be organized in the future
+" -----------------------------------------------------------------------------
 iab #i #include
-iab #p #! /usr/bin/python -tt
 iab #l #!/usr/local/bin/sbcl --script
 iab cmain int main(int argc, char *argv[]){<CR><CR>return 0;<CR>}<ESC>kk:call getchar()<CR>
 iab cif if () {<ESC>o}<ESC>k$F):call getchar()<CR>
 iab cfor for () {<ESC>o}<ESC>k$F):call getchar()<CR>
-
 
 "make file
 set makeprg=g++\ %\ -o\ %<
@@ -39,9 +58,6 @@ imap <F9> <esc>:w<enter>:make<enter>
 "execute current file
 nmap ,a :w<enter>:!./%<enter>
 imap ,a <esc>:w<enter>:!./%<enter>
-
-"terminal encoding
-set tenc=utf-8
 
 " If no screen, use color term
 if ($TERM == "vt100")
@@ -60,7 +76,6 @@ if filereadable($VIMRUNTIME . "/macros/matchit.vim")
 endif
 
 
-set nocompatible
 set wildmenu
 set backupdir=~/.vim/vim-backup,.,/var/tmp/vi.recover,/tmp
 set directory=~/.vim/vim-backup,/var/tmp/vi.recover,/tmp,.

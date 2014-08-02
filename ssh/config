@@ -1,7 +1,3 @@
-Host cunix
-    Hostname cunix.cc.columbia.edu
-    User yc2796
-
 Host csie
     Hostname linux15.csie.ntu.edu.tw
     User b96202041
@@ -9,3 +5,15 @@ Host csie
 Host phys
     Hostname phys.tw
     User b96202041
+
+Host cunix
+    Hostname cunix.cc.columbia.edu
+    User yc2796
+
+Host princeton
+    Hostname arizona.princeton.edu
+    User chingyuc
+
+Host fas
+    Hostname fas.harvard.edu
+    User yihsiuchen
