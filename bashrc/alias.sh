@@ -1,7 +1,7 @@
 if [ `uname` = "Linux" ]; then
   alias ls='ls -hF --color=auto'
   alias la="ls -AF"
-  alias ll="ls -lF"
+  alias ll="ls -lFA"
   alias lm="ls -lFA | more"
   alias lu="ls -lFu"
   alias lU="ls -lFU"
@@ -9,7 +9,7 @@ elif [ `uname` = "Darwin" ]; then # For Mac OSX
   export CLICOLOR=1
   export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
   alias la="ls -AF"
-  alias ll="ls -lOF"
+  alias ll="ls -lOFA"
   alias lm="ls -lOFA | more"
   alias lu="ls -lFuT"
   alias lU="ls -lFUT"

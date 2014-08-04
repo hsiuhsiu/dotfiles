@@ -48,10 +48,10 @@ if [ "$INSTALL_ALL" = true ] || promptyn "Install git configurations? (replace o
   printf "done\n"
 fi
 
-if [ "$INSTALL_ALL" = true ] || promptyn "Install git configurations? (replace old ones by symbolic links)"; then
+if [ "$INSTALL_ALL" = true ] || promptyn "Install vim configurations? (replace old ones by symbolic links)"; then
   printf "Installing vim configurations ... "
   rm -rf ~/.vim
-  ln -s ${DIR}/vim ~/.vim
+  ln -s ${DIR}/vim/ ~/.vim
   rm -f ~/.vimrc
   ln -s ${DIR}/vim/vimrc ~/.vimrc
   printf "done\n"
