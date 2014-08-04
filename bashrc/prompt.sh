@@ -31,11 +31,10 @@ function prompt {
   fi
   if command -v __git_ps1 >/dev/null; then
     GIT_BRANCH='-$(__git_ps1 %s)-'
-    PS1="$BLUE[\A] $DARK_BLUE\u@\h$DARK_GRAY: $GREEN\w $BLUE$GIT_BRANCH \n$PROMPT_COLOR\$ $NO_COLOR"
   else
     GIT_BRANCH=""
-    PS1="$BLUE[\A] $DARK_BLUE\u@\h$DARK_GRAY: $GREEN\w $BLUE$GIT_BRANCH \n$PROMPT_COLOR\$ $NO_COLOR"
   fi
+  PS1="$DARK_BLUE[\A] $DARK_BLUE\u@\h$DARK_GRAY: $GREEN\w $BLUE$GIT_BRANCH \n$PROMPT_COLOR\$ $NO_COLOR"
   PS2='continue-> '
   PS4='$0.$LINENO+ '
 }

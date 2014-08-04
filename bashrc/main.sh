@@ -8,7 +8,7 @@ fi
 DIR=$(dirname ${BASH_SOURCE[0]})
 
 source ${DIR}/prompt.sh
-source ${DIR}/basic_alias.sh
+source ${DIR}/alias.sh
 
 alias server='python -m SimpleHTTPServer'
 alias ptt='ssh bbsu@ptt.cc'

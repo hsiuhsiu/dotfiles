@@ -11,11 +11,15 @@ syntax on
 " -----------------------------------------------------------------------------
 filetype indent plugin on
 set nocompatible
+set wildmenu
 set ai
-set nu
+set number
 set hlsearch
 set mouse=a
 set tenc=utf-8
+set ruler
+set laststatus=2
+set cmdheight=2
 
 set tabstop=4
 set shiftwidth=4
