@@ -21,3 +21,6 @@ alias cp="cp -i"
 
 alias h="history"
 alias vir="vim -R"
+alias server='python -m SimpleHTTPServer'
+alias ptt='ssh bbsu@ptt.cc'
+
