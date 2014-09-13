@@ -17,3 +17,13 @@ Host princeton
 Host fas
     Hostname fas.harvard.edu
     User yihsiuchen
+
+Host seas
+    HostName        login.seas.harvard.edu
+    User            yhchen
+    ForwardAgent    yes
+Host seasx
+    HostName        login.seas.harvard.edu
+    User            yhchen
+    ForwardAgent    yes
+    ForwardX11      yes
