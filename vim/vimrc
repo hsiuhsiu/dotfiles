@@ -31,11 +31,13 @@ set expandtab
 " -----------------------------------------------------------------------------
 " Highlights
 " -----------------------------------------------------------------------------
-highlight Tab guifg=red ctermbg=red
-call matchadd('Tab', '\t')
+if version >= 720
+    highlight Tab guifg=red ctermbg=red
+    call matchadd('Tab', '\t')
 
-highlight ExtraWhitespace ctermbg=grey guibg=grey
-call matchadd('ExtraWhitespace', '\s\+$')
+    highlight ExtraWhitespace ctermbg=grey guibg=grey
+    call matchadd('ExtraWhitespace', '\s\+$')
+end
 
 " -----------------------------------------------------------------------------
 " Abbreviation
