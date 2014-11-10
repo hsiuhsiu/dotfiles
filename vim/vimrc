@@ -63,7 +63,6 @@ nmap <F9> :w<enter>:make<enter>
 imap <F9> <esc>:w<enter>:make<enter>
 "execute current file
 nmap ,a :w<enter>:!./%<enter>
-imap ,a <esc>:w<enter>:!./%<enter>
 
 " If no screen, use color term
 if ($TERM == "vt100")
