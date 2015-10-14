@@ -51,11 +51,6 @@ end
 " -----------------------------------------------------------------------------
 " Belows should be organized in the future
 " -----------------------------------------------------------------------------
-iab #i #include
-iab #l #!/usr/local/bin/sbcl --script
-iab cmain int main(int argc, char *argv[]){<CR><CR>return 0;<CR>}<ESC>kk:call getchar()<CR>
-iab cif if () {<ESC>o}<ESC>k$F):call getchar()<CR>
-iab cfor for () {<ESC>o}<ESC>k$F):call getchar()<CR>
 
 "make file
 set makeprg=g++\ %\ -o\ %<
