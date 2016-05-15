@@ -10,3 +10,4 @@ DIR=$(dirname ${BASH_SOURCE[0]})
 source ${DIR}/prompt.sh
 source ${DIR}/alias.sh
 
+export SVN_EDITOR="/usr/bin/vim"

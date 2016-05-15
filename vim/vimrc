@@ -57,7 +57,7 @@ set makeprg=g++\ %\ -o\ %<
 nmap <F9> :w<enter>:make<enter>
 imap <F9> <esc>:w<enter>:make<enter>
 "execute current file
-nmap ,a :w<enter>:!./%<enter>
+"nmap ,a :w<enter>:!./%<enter>
 
 " If no screen, use color term
 if ($TERM == "vt100")
