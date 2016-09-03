@@ -3,6 +3,10 @@ Host aws
     User ubuntu
     IdentityFile ~/Dropbox/Backup/aws-key.pem
 
+Host hsiu
+    Hostname aws.yyhsiu.com
+    User hsiu
+
 Host csie
     Hostname linux15.csie.ntu.edu.tw
     User b96202041

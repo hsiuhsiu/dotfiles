@@ -2,7 +2,7 @@
 	name = Yi-Hsiu Chen
 	email = hsiuhsiu@gmail.com
 [core]
-	excludesfile = /Users/yhchen/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [color]
     ui = true
 [alias]
