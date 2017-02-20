@@ -1,2 +1,2 @@
-ab #p #! /usr/bin/python -tt
+ab #p #! /usr/bin/env python3
 nmap ,a :w<enter>:!./%<enter>
