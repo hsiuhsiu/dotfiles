@@ -81,6 +81,7 @@ endif
 
 set wildmenu
 set backupdir=~/.vim/vim-backup,.,/var/tmp/vi.recover,/tmp
+set undodir=~/.vim/vim-undo,.,/var/tmp/vi.recover,/tmp
 set directory=~/.vim/vim-backup,/var/tmp/vi.recover,/tmp,.
 set backup		" keep a backup file
 set bs=2		" allow backspacing over everything in insert mode

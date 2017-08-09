@@ -36,3 +36,7 @@ Host seasx
     User            yhchen
     ForwardAgent    yes
     ForwardX11      yes
+
+Host mit
+    HostName        eecs-ath-34.mit.edu
+    User            hsiu

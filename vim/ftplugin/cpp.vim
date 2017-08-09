@@ -10,3 +10,5 @@ nmap ,prime <esc>:call Prime()<CR>
 
 ab #i #include
 ab using using namespace std;
+
+nmap ,a :w<enter>:!g++ %<enter>
