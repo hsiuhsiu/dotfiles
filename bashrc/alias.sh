@@ -13,6 +13,7 @@ elif [ `uname` = "Darwin" ]; then # For Mac OSX
   alias lm="ls -lOFA | more"
   alias lu="ls -lFuT"
   alias lU="ls -lFUT"
+  alias vim="/usr/local/bin/vim"
 fi
 
 alias rm="rm -i"
