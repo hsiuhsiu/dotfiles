@@ -1,7 +1,15 @@
+Host *
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
 Host aws
     Hostname 54.174.27.144
     User ubuntu
     IdentityFile ~/Dropbox/Backup/aws-key.pem
+
+Host yyhsiu
+    Hostname vps.yyhsiu.com
+    User yyhsiu
 
 Host hsiu
     Hostname aws.yyhsiu.com
