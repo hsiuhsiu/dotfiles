@@ -1,112 +1,73 @@
-" -----------------------------------------------------------------------------
-" Coloring
-" -----------------------------------------------------------------------------
+" ------- Encoding ------------------------------------------------------------
+scriptencoding utf-8
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,ucs-bom,sjis,big5,latin1
+
+
+" ------- Coloring ------------------------------------------------------------
 syntax on
 " color scheme may overwrite the highlights
-"colorscheme kolor
+" colorscheme kolor
 
 
-" -----------------------------------------------------------------------------
-" Common Basic Settings
-" -----------------------------------------------------------------------------
-filetype indent plugin on
+" ------- General -------------------------------------------------------------
 set nocompatible
-set wildmenu
+filetype indent plugin on
+set wildmode=longest:full,full
 set ai
 set number
 set hlsearch
 set mouse=a
-set tenc=utf-8
 set ruler
+set colorcolumn=80
 set laststatus=2
 set cmdheight=2
-
+set listchars=eol:¬,tab:┊\ 
+set list
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-
 set splitbelow
 set splitright
-
-"set scrolloff=999 "always make cursor in the middle of the screen
-
-" -----------------------------------------------------------------------------
-" Highlights
-" -----------------------------------------------------------------------------
-if version >= 720
-    highlight Tab guifg=red ctermbg=red
-    call matchadd('Tab', '\t')
-
-    highlight ExtraWhitespace ctermbg=grey guibg=grey
-    call matchadd('ExtraWhitespace', '\s\+$')
-end
-
-" -----------------------------------------------------------------------------
-" Abbreviation
-" -----------------------------------------------------------------------------
-"abbreviations"
-"func Eatchar(pat)
-"    let c = nr2char(getchar(0))
-"    return (c =~ a:pat) ? '' : c
-"endfunc
-
-" -----------------------------------------------------------------------------
-" Belows should be organized in the future
-" -----------------------------------------------------------------------------
-
-"make file
-set makeprg=g++\ %\ -o\ %<
-nmap <F9> :w<enter>:make<enter>
-imap <F9> <esc>:w<enter>:make<enter>
-"execute current file
-"nmap ,a :w<enter>:!./%<enter>
-
-" If no screen, use color term
-if ($TERM == "vt100")
-    " xterm-color / screen
-    set t_Co=8
-    set t_AF=[1;3%p1%dm
-    set t_AB=[4%p1%dm
-endif
-
-if filereadable($VIMRUNTIME . "/vimrc_example.vim")
-    so $VIMRUNTIME/vimrc_example.vim
-endif
-
-if filereadable($VIMRUNTIME . "/macros/matchit.vim")
-    so $VIMRUNTIME/macros/matchit.vim
-endif
+set showmatch
+set bs=2 " allow backspacing over everything in insert mode
+" set scrolloff=999 "always make cursor in the middle of the screen
+set foldmethod=indent
+set foldcolumn=2
+set foldlevel=3
 
 
-set wildmenu
+" ------- Highlights ----------------------------------------------------------
+highlight ColorColumn ctermbg=0
+call matchadd('ColorColumn', '\%81v')
+
+" highlight Tab guibg=grey ctermbg=0
+" call matchadd('Tab', '\t')
+"
+" highlight ExtraWhitespace guibg=grey ctermfg=0
+" call matchadd('ExtraWhitespace', '\s\+$')
+
+
+" ------- Toggles / Short cuts ------------------------------------------------
+:command W w
+:command Q q
+set pastetoggle=<C-p>
+nmap <C-Char-63> :set hls! <cr>
+nnoremap / :set hlsearch<cr>/
+nnoremap <space> za
+nnoremap <F9> :!%:p<cr>
+
+
+" ------- Backup --------------------------------------------------------------
 set backupdir=~/.vim/vim-backup,.,/var/tmp/vi.recover,/tmp
 set undodir=~/.vim/vim-undo,.,/var/tmp/vi.recover,/tmp
 set directory=~/.vim/vim-backup,/var/tmp/vi.recover,/tmp,.
-set backup		" keep a backup file
-set bs=2		" allow backspacing over everything in insert mode
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-set showmatch
+set backup
 
-" VIM 6.0,
-if version >= 600
-    set nohlsearch
-    " set foldcolumn=2
-    " set foldmethod=syntax
-    set foldmethod=marker
-    set foldlevel=1
-    "    set foldtext=/^/=>
-    " set encoding=utf-8
-    " set fileencoding=big5
-    " set termencoding=big5
-    set encoding=big5
-    " set fileencodings=latin,big5,ucs-bom,utf-8,sjis,big5
-    set fileencodings=ucs-bom,utf-8,sjis,big5,latin1
-else
-    set fileencoding=taiwan
-endif
 
-" Tab key binding
+" ------- Tab key binding -----------------------------------------------------
 if version >= 700
     map  <C-t> :tabnew<CR>
     imap <C-t> <ESC>:tabnew<CR>
@@ -131,12 +92,39 @@ if version >= 700
     map gn :tabn<CR>
     map gp :tabp<CR>
 
-    highlight TabLineSel term=bold,underline cterm=bold,underline ctermfg=7 ctermbg=0
-    highlight TabLine    term=bold cterm=bold
+    highlight TabLineSel term=bold,underline cterm=bold,underline ctermfg=232 ctermbg=7
+    highlight TabLine    ctermfg=10 ctermbg=0
     highlight clear TabLineFill
-
-
 end
+
+
+
+" -----------------------------------------------------------------------------
+" Belows need to be organized
+" -----------------------------------------------------------------------------
+
+autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+autocmd BufRead,BufNewFile ~/nginx/* setfiletype conf
+
+" If no screen, use color term
+if ($TERM == "vt100")
+    " xterm-color / screen
+    set t_Co=8
+    set t_AF=[1;3%p1%dm
+    set t_AB=[4%p1%dm
+endif
+
+if filereadable($VIMRUNTIME . "/vimrc_example.vim")
+    so $VIMRUNTIME/vimrc_example.vim
+endif
+
+if filereadable($VIMRUNTIME . "/macros/matchit.vim")
+    so $VIMRUNTIME/macros/matchit.vim
+endif
+
+
+set viminfo='20,\"50 " read/write a .viminfo file, don't store more
+
 
 " Crontabs must be edited in place
 au BufRead /tmp/crontab* :set backupcopy=yes

@@ -11,4 +11,9 @@ nmap ,prime <esc>:call Prime()<CR>
 ab #i #include
 ab using using namespace std;
 
-nmap ,a :w<enter>:!g++ %<enter>
+" nnoremap <F9> :w<enter>:!g++ -std=c++11 %<enter>
+
+set makeprg=g++\ -std=c++11\ %\ -o\ %<
+
+nmap <F9> :w<enter>:make<enter>
+imap <F9> <esc>:w<enter>:make<enter>
