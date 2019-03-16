@@ -9,7 +9,9 @@ set fileencodings=utf-8,ucs-bom,sjis,big5,latin1
 syntax on
 " color scheme may overwrite the highlights
 " colorscheme kolor
-
+hi CursorLine cterm=NONE ctermbg=0
+hi CursorLineNr ctermbg=0 ctermfg=228
+set cursorline
 
 " ------- General -------------------------------------------------------------
 set nocompatible
@@ -44,10 +46,10 @@ set autoread
 "set tabline="%1T"
 set laststatus=2
 
-hi statuslineC1 ctermbg=240 ctermfg=248
-hi statuslineC2 ctermbg=237 ctermfg=248
-hi statuslineC3 ctermbg=240 ctermfg=248
-hi statuslineC4 ctermbg=237 ctermfg=248
+hi statuslineC1 ctermbg=238 ctermfg=248
+hi statuslineC2 ctermbg=236 ctermfg=248
+hi statuslineC3 ctermbg=238 ctermfg=248
+hi statuslineC4 ctermbg=240 ctermfg=248
 
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -85,15 +87,13 @@ set statusline+=%#statuslineC1#
 set statusline+=\ (%{StatuslineGit()})
 set statusline+=\ %F%m%r%h%w
 set statusline+=\ %#statuslineC2#
-set statusline+=\ %{&ff}
-set statusline+=┊\ %Y
-set statusline+=┊\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ %#statuslineC3#
-"set statusline+=\ %-3(%{FileSize()}%)
 set statusline+=%=
-set statusline+=%#statuslineC4#
-set statusline+=\ Char:\ \%03.3b=0x%02.2B,
-set statusline+=\ Line:\ %l/%L,\ Col:\ %v\ 
+"set statusline+=\ %-3(%{FileSize()}%)
+set statusline+=\ %{&ff}┊\ %Y┊\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ %#statuslineC3#
+set statusline+=\ \%03.3b=0x%02.2B
+set statusline+=\ %#statuslineC4#
+set statusline+=\ %l/%L:%v\ 
 
 
 " ------- Highlights ----------------------------------------------------------
