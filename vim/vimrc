@@ -21,7 +21,6 @@ set hlsearch
 set mouse=a
 set ruler
 set colorcolumn=80
-set laststatus=2
 set cmdheight=2
 set listchars=eol:¬,tab:┊\ 
 set list
@@ -33,10 +32,68 @@ set splitbelow
 set splitright
 set showmatch
 set bs=2 " allow backspacing over everything in insert mode
-" set scrolloff=999 "always make cursor in the middle of the screen
+set scrolloff=3
 set foldmethod=indent
 set foldcolumn=2
 set foldlevel=3
+set autoread
+
+
+" ------- Status Line ---------------------------------------------------------
+"set noshowmode
+"set tabline="%1T"
+set laststatus=2
+
+hi statuslineC1 ctermbg=240 ctermfg=248
+hi statuslineC2 ctermbg=237 ctermfg=248
+hi statuslineC3 ctermbg=240 ctermfg=248
+hi statuslineC4 ctermbg=237 ctermfg=248
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?l:branchname:''
+endfunction
+
+" Find out current buffer's size and output it.
+function! FileSize()
+  let bytes = getfsize(expand('%:p'))
+  if (bytes >= 1024)
+    let kbytes = bytes / 1024
+  endif
+  if (exists('kbytes') && kbytes >= 1000)
+    let mbytes = kbytes / 1000
+  endif
+
+  if bytes <= 0
+    return '0'
+  endif
+
+  if (exists('mbytes'))
+    return mbytes . 'MB '
+  elseif (exists('kbytes'))
+    return kbytes . 'KB '
+  else
+    return bytes . 'B '
+  endif
+endfunction
+
+set statusline+=%#statuslineC1#
+set statusline+=\ (%{StatuslineGit()})
+set statusline+=\ %F%m%r%h%w
+set statusline+=\ %#statuslineC2#
+set statusline+=\ %{&ff}
+set statusline+=┊\ %Y
+set statusline+=┊\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ %#statuslineC3#
+"set statusline+=\ %-3(%{FileSize()}%)
+set statusline+=%=
+set statusline+=%#statuslineC4#
+set statusline+=\ Char:\ \%03.3b=0x%02.2B,
+set statusline+=\ Line:\ %l/%L,\ Col:\ %v\ 
 
 
 " ------- Highlights ----------------------------------------------------------
@@ -103,8 +160,8 @@ end
 " Belows need to be organized
 " -----------------------------------------------------------------------------
 
-autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
-autocmd BufRead,BufNewFile ~/nginx/* setfiletype conf
+"autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
+"autocmd BufRead,BufNewFile ~/nginx/* setfiletype conf
 
 " If no screen, use color term
 if ($TERM == "vt100")
