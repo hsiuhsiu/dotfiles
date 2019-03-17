@@ -19,7 +19,6 @@ filetype indent plugin on
 set wildmode=longest:full,full
 set ai
 set number
-set hlsearch
 set mouse=a
 set ruler
 set colorcolumn=80
@@ -39,6 +38,7 @@ set foldmethod=indent
 set foldcolumn=2
 set foldlevel=3
 set autoread
+set nohlsearch
 
 
 " ------- Status Line ---------------------------------------------------------
@@ -171,17 +171,9 @@ if ($TERM == "vt100")
     set t_AB=[4%p1%dm
 endif
 
-if filereadable($VIMRUNTIME . "/vimrc_example.vim")
-    so $VIMRUNTIME/vimrc_example.vim
-endif
-
-if filereadable($VIMRUNTIME . "/macros/matchit.vim")
-    so $VIMRUNTIME/macros/matchit.vim
-endif
-
-
 set viminfo='20,\"50 " read/write a .viminfo file, don't store more
 
 
 " Crontabs must be edited in place
 au BufRead /tmp/crontab* :set backupcopy=yes
+
