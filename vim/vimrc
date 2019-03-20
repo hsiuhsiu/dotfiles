@@ -28,10 +28,7 @@ set ai
 set number
 set mouse=a
 set ruler
-set colorcolumn=80
 set cmdheight=2
-set listchars=eol:¬,tab:┊\ 
-set list
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -96,7 +93,7 @@ set statusline+=\ (%{StatuslineGit()})
 set statusline+=\ %F%m%r%h%w
 set statusline+=\ %#statuslineC2#
 set statusline+=%=
-"set statusline+=\ %-3(%{FileSize()}%)
+set statusline+=\ %-3(%{FileSize()}%)
 set statusline+=\ %{&ff}┊\ %Y┊\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ %#statuslineC3#
 set statusline+=\ \%03.3b=0x%02.2B
@@ -105,19 +102,21 @@ set statusline+=\ %l/%L:%v\
 
 
 " ------- Highlights ----------------------------------------------------------
+set colorcolumn=80
 highlight ColorColumn ctermbg=0
-call matchadd('ColorColumn', '\%81v')
-
-" highlight Tab guibg=grey ctermbg=0
-" call matchadd('Tab', '\t')
-"
-" highlight ExtraWhitespace guibg=grey ctermfg=0
-" call matchadd('ExtraWhitespace', '\s\+$')
+set listchars=tab:┊\ 
+set list
+highlight ExtraWhitespace guibg=grey ctermbg=12
+call matchadd('ExtraWhitespace', '\s\+$')
 
 
 " ------- Toggles / Short cuts ------------------------------------------------
 :command W w
 :command Q q
+:command Wq wq
+:command WQ wq
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
 set pastetoggle=<C-p>
 nmap <C-Char-63> :set hls! <cr>
 nnoremap / :set hlsearch<cr>/
