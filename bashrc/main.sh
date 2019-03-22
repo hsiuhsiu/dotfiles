@@ -4,7 +4,15 @@ if command -v brew >/dev/null; then
   fi
 fi
 
-# get self file's parent directory
+case $TERM in
+  xterm*|rxvt*)
+    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+    ;;
+  *)
+    TITLEBAR=""
+    ;;
+esac
+
 DIR=$(dirname ${BASH_SOURCE[0]})
 
 source ${DIR}/prompt.sh
