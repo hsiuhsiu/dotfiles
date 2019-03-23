@@ -115,13 +115,14 @@ call matchadd('ExtraWhitespace', '\s\+$')
 :command Q q
 :command Wq wq
 :command WQ wq
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
+nmap <ENTER> o<ESC>
+nmap <S-Enter> O<ESC>
 set pastetoggle=<C-p>
 nmap <C-Char-63> :set hls! <cr>
 nnoremap / :set hlsearch<cr>/
 nnoremap <space> za
-nnoremap <F9> :!%:p<cr>
+nnoremap <C-m> :w<CR>:!tmux run-shell -t 1 "./%"<CR><CR>
+inoremap <C-m> <ESC>:w<CR>:!tmux run-shell -t 1 "./%"<CR><CR>
 
 
 " ------- Backup --------------------------------------------------------------
