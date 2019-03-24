@@ -121,8 +121,9 @@ set pastetoggle=<C-p>
 nmap <C-Char-63> :set hls! <cr>
 nnoremap / :set hlsearch<cr>/
 nnoremap <space> za
-nnoremap <C-m> :w<CR>:!tmux run-shell -t 1 "./%"<CR><CR>
-inoremap <C-m> <ESC>:w<CR>:!tmux run-shell -t 1 "./%"<CR><CR>
+nnoremap ;m0 :w<CR>:!tmux run-shell -t 0 "./%"<CR><CR>
+nnoremap ;m1 :w<CR>:!tmux run-shell -t 1 "./%"<CR><CR>
+nnoremap ;m2 :w<CR>:!tmux run-shell -t 2 "./%"<CR><CR>
 
 
 " ------- Backup --------------------------------------------------------------
@@ -164,6 +165,7 @@ end
 
 
 " ------- Specific Files ------------------------------------------------------
+au FocusGained,BufEnter * :silent! !
 " nginx configuration
 au BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
 au BufRead,BufNewFile ~/nginx/* setfiletype conf
