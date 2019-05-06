@@ -1,9 +1,7 @@
 ## My dotfiles
 
-### Installation
-    bash install.sh [-a]
-
-`-a`: install all. (The script will install everything without prompts.)
+### Installation (by [dotbot](https://github.com/anishathalye/dotbot))
+    ./install
 
 ### Coloring
 
