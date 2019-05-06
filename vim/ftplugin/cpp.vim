@@ -26,3 +26,5 @@ nmap ;m1 <F8>:!tmux run-shell -t 2 "./%<"<CR><CR>
 nmap ;mi2 <F8>:!tmux run-shell -t 2 "./%< < in.txt"<CR><CR>
 nmap ;mo <F8>:!tmux run-shell -t 0 "./%< > out.txt"<CR><CR>:!tmux send-keys -t 1 ":e" Enter <CR><CR>
 nmap ;mio <F8>:!tmux run-shell -t 0 "./%< < in.txt > out.txt"<CR><CR>:!tmux send-keys -t 1 ":e" Enter <CR><CR>
+nmap <C-g> <F8>:!tmux run-shell -t 0 "./%< < in.txt > out.txt"<CR><CR>:!tmux send-keys -t 1 ":e" Enter <CR><CR>
+imap <C-g> <F8>:!tmux run-shell -t 0 "./%< < in.txt > out.txt"<CR><CR>:!tmux send-keys -t 1 ":e" Enter <CR><CR>
