@@ -21,3 +21,5 @@ source ${DIR}/alias.sh
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export SVN_EDITOR="/usr/bin/vim"
+
+set -o vi
