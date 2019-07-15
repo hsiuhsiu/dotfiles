@@ -46,6 +46,16 @@ set nohlsearch
 set viminfo='20,\"50 " read/write a .viminfo file, don't store more
 
 
+" ------- Cursors -------------------------------------------------------------
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[2 q"
+"au InsertLeave * redraw!
+augroup END
+
+
 " ------- Status Line ---------------------------------------------------------
 "set noshowmode
 "set tabline="%1T"
