@@ -48,12 +48,12 @@ set viminfo='20,\"50 " read/write a .viminfo file, don't store more
 
 " ------- Cursors -------------------------------------------------------------
 let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-augroup myCmds
-au!
-autocmd VimEnter * silent !echo -ne "\e[2 q"
+"let &t_EI = "\e[2 q"
+"augroup myCmds
+"au!
+"autocmd VimEnter * silent !echo -ne "\e[2 q"
 "au InsertLeave * redraw!
-augroup END
+"augroup END
 
 
 " ------- Status Line ---------------------------------------------------------
@@ -99,7 +99,7 @@ function! FileSize()
 endfunction
 
 set statusline+=%#statuslineC1#
-set statusline+=\ (%{StatuslineGit()})
+"set statusline+=\ (%{StatuslineGit()})
 set statusline+=\ %F%m%r%h%w
 set statusline+=\ %#statuslineC2#
 set statusline+=%=

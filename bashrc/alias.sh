@@ -24,4 +24,4 @@ alias h="history"
 alias vir="vim -R"
 alias server='python -m SimpleHTTPServer'
 alias ptt='ssh bbsu@ptt.cc'
-
+alias cryptopp='clang++ -L/Users/yihsiu/Documents/cryptopp/ -lcryptopp -I/Users/yihsiu/Documents/'
