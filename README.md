@@ -29,9 +29,9 @@ Note that the following files will be overwirte. Backup them if needed
 [include]
 	path = ~/dotfiles/git/common.gitconfig
 [includeIf "gitdir:~/work/"]
-    path = .work.gitconfig
+	path = .work.gitconfig
 [includeIf "gitdir:~/personal/"]
-    path = .personal.gitconfig
+	path = .personal.gitconfig
 ```
 
 ## Coloring Cheatsheet
