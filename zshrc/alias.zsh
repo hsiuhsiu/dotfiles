@@ -30,3 +30,4 @@ alias cryptopp='clang++ -L/Users/yihsiu/Documents/cryptopp/ -lcryptopp -I/Users/
 # misc
 alias c="clear"
 alias h="history"
+alias path="echo ${PATH//:/$'\n'}"
