@@ -7,7 +7,6 @@
 
 - link:
     ~/.gitignore_global: git/gitignore_global
-    ~/.inputrc: inputrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vim/vimrc

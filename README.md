@@ -1,25 +1,28 @@
 # My dotfiles
 
-It includes some config files for
+It includes my config files for
 
 - vim
 - tmux
 - bash
 - zsh
 - git
+- cmqlstyle
 
 ## Setup (by [dotbot](https://github.com/anishathalye/dotbot))
 
 Run `./install`.
 
-Note that the following files will be overwirte. Backup them if needed
+Note that the following files will be overwirte. Backup them if necessary
 
 - `~/.gitignore_global`
-- `~/.inputrc`
 - `~/.tmux.conf`
 - `~/.vim`
 - `~/.vimrc`
 - `~/.cmqlstyle.css`
+
+### Shell
+Use oh-my-zsh and the romkatv/powerlevel10k theme instead
 
 ### Git
 
