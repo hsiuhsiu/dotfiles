@@ -1,5 +1,5 @@
 [include]
 	path = ~/dotfiles/git/common.gitconfig
 [user]
-	name = Yi-Hsiu Chen
+	name = hsiuhsiu
 	email = yihsiuc@pm.me
