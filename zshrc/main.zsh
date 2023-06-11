@@ -13,7 +13,7 @@ case $TERM in
     ;;
 esac
 
-DIR=${0:a:h}
+DIR=${0:A:h}
 source ${DIR}/prompt.zsh
 source ${DIR}/alias.zsh
 
