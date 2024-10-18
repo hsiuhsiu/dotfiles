@@ -4,3 +4,7 @@
 .DS_Store
 .ruby-version
 .idea/
+.vscode/
+.ninja_deps
+.ninja_log
+build.ninja
